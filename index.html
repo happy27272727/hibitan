@@ -28,12 +28,12 @@
 
         <div id="syokiGamen" class="screen">
             <h1>ヒビタン</h1>
-            
-            <label for="loginName">名前</label>
-            <input type="text" id="loginName" maxlength="10" placeholder="例：ニックネーム" />
+
+            <label for="loginName">ニックネーム</label>
+            <input type="text" id="loginName" maxlength="10" placeholder="例：クリボー" />
 
             <label for="loginPassword">パスワード</label>
-            <input type="password" id="loginPassword" maxlength="4" placeholder="例：0627">
+            <input type="password" id="loginPassword" maxlength="4" placeholder="例：0000">
 
             <button id="roguinButton">ログイン</button>
             <button onclick="startTutorialFromInitial()">新規登録</button>
@@ -61,8 +61,8 @@
             <p>その日、出来たかどうか。<br>
                 「記録」ボタンを押すだけで、<br>その事実が記録されます。</p>
             <div class="button-group">
-                <button onclick="showScreen('step1')">戻る</button>
                 <button onclick="showScreen('step3')">進む</button>
+                <button onclick="showScreen('step1')">戻る</button>
                 <button onclick="tutorialLater()">後で見る</button>
             </div>
         </div>
@@ -72,14 +72,14 @@
             <h1>新規登録</h1>
             <p>記録するために、最初に決めること。</p>
             <p>目標や意気込み、合言葉を決めます。<br>
-                何を続けるかは、自分で決めます。</p>
+                何を続けるかは、あなた次第。</p>
             <div class="button-group">
-                <button onclick="showScreen('step2')">戻る</button>
                 <!-- step3 内 -->
                 <button onclick="showStep4()">進む</button>
+                                <button onclick="showScreen('step2')">戻る</button>
                 <button onclick="tutorialLater()">後で見る</button>
             </div>
-        </div>   
+        </div>
 
         <!-- ④ 合言葉 -->
         <div id="step4" class="screen">
@@ -103,6 +103,7 @@
 
                 <ul id="submenu" class="menu">
                     <li><button id="nakamaButton">仲間の様子</button></li>
+                    <li><button onclick="showScreen('commentGamen')">コメント</button></li>
                     <li><button onclick="startTutorialFromHome()">チュートリアル</button></li>
                 </ul>
             </div>
@@ -134,13 +135,13 @@
 
             <div class="form-group">
                 <label for="passInput">パスワード</label>
-                <input type="password" id="passInput" maxlength="4" placeholder="例：0627" />
+                <input type="password" id="passInput" maxlength="10" placeholder="例：0123456789" />
             </div>
 
             <!--目標入力-->
             <div class="form-group">
                 <label for="mokuhyouInput">目標</label>
-                <input type="text" id="mokuhyouInput" maxlength="20" placeholder="例：毎日素振り100回" />
+                <input type="text" id="mokuhyouInput" maxlength="25" placeholder="例：毎日素振り100回" />
             </div>
 
             <!--実行頻度-->
@@ -162,13 +163,13 @@
             <!--合言葉-->
             <div class="form-group">
                 <label for="aikotoba">合言葉</label>
-                <input type="text" id="aikotoba" maxlength="10"/>
+                <input type="text" id="aikotoba" maxlength="10" placeholder="例：マスカット" />
             </div>
 
             <!--意気込み-->
             <div class="form-group">
                 <label for="ikigomi">意気込み</label>
-                <input type="text" id="ikigomi" maxlength="30" />
+                <input type="text" id="ikigomi" maxlength="25" placeholder="例：錦織を超える。本気だよ？" />
             </div>
 
             <!--登録ボタン-->
@@ -187,6 +188,24 @@
         <div id="kinouGaiyou" class="screen">
             <button onclick="showScreen('homeGamen')">戻る</button>
         </div>
+
+
+        <div id="commentGamen" class="screen">
+            <h1>コメント</h1>
+
+            <div class="form-group">
+                <p style="font-size:0.85em; color:#6a5333; margin-bottom:8px;">
+                    ※ログイン中のニックネームと一緒に届きます！<br>
+                    　見るのは僕だけです！
+                </p>
+                <textarea id="commentInput" maxlength="100" rows="10"
+                          placeholder="改善案・感想・こんな機能あったらおもろい！など"
+                          ></textarea>
+            </div>
+            <button id="commentSendButton">登録</button>
+            <button onclick="showScreen('homeGamen')">戻る</button>
+        </div>
+
 
         <script>
             if ('serviceWorker' in navigator) {
