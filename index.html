@@ -2,6 +2,12 @@
 
 <html>
     <head>
+        <!-- PWA 標準用 -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-status-bar-style" content="default">
+
+        <!-- iOS 用アイコン -->
+        <link rel="apple-touch-icon" href="icon-192.png">
         <link rel="manifest" href="manifest.json">
         <meta name="theme-color" content="#4CAF50">
         <title>ヒビタン</title>
@@ -10,8 +16,8 @@
         <script type="module" src="lib/Hibitan.js" defer></script>
         <link href="lib/Hibitan.css" rel="stylesheet" media="all">
         <link rel="apple-touch-icon" href="icon-192.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
     </head>
 
     <body>
@@ -21,6 +27,8 @@
         <!--初期画面-->
 
         <div id="syokiGamen" class="screen">
+            <h1>ヒビタン</h1>
+            
             <label for="loginName">名前</label>
             <input type="text" id="loginName" maxlength="10" placeholder="例：ニックネーム" />
 
@@ -179,14 +187,14 @@
         <div id="kinouGaiyou" class="screen">
             <button onclick="showScreen('homeGamen')">戻る</button>
         </div>
-        
+
         <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js')
-    .then(() => console.log('SW registered'))
-    .catch(err => console.error(err));
-}
-</script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('./sw.js')
+                        .then(() => console.log('SW registered'))
+                        .catch(err => console.error(err));
+            }
+        </script>
     </body>
 </html>
 
