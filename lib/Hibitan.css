@@ -1,0 +1,220 @@
+/* ===============================
+   Hibitan.css - 森の中を歩くイメージ
+   =============================== */
+
+/* 全体 */
+body {
+    font-family: "ヒラギノ角ゴシック W3","游ゴシック","メイリオ",sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #d9e4d0, #e0d4b0); /* 森の中背景 */
+    color: #4b3f2f;
+    font-weight: 500;
+}
+
+/* 画面共通 */
+.screen {
+    display: none;
+    padding: 48px 20px;
+    text-align: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    max-width: 520px;
+    margin: 0 auto;
+    background: transparent; /* 背景は透明 */
+}
+
+/* 初期画面のみ表示 */
+#syokiGamen {
+    display: block;
+}
+
+/* 見出し */
+h1 {
+    font-size: 1.9em;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* 日付 */
+#date {
+    font-size: 0.95em;
+    color: #6a5333; /* 落ち着いた土っぽい茶色 */
+    margin-bottom: 20px;
+}
+
+/* 説明文 */
+p {
+    margin: 6px 0;
+    line-height: 1.6;
+}
+
+/* フォームグループ */
+.form-group {
+    margin: 14px auto;
+    max-width: 360px;
+    text-align: left;
+}
+
+/* ラベル */
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.95em;
+    color: #4b3f2f;
+}
+
+/* 入力 */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 0.95em;
+    border-radius: 4px;
+    border: 1px solid #c3a878; /* 木の質感 */
+    background-color: #f3e8d0; /* 木漏れ日感 */
+    box-sizing: border-box;
+}
+
+/* ログインフォームの入力欄を新規登録フォームと同じに固定 */
+#loginName,
+#loginPassword,
+#loginName:focus,
+#loginPassword:focus {
+    background-color: #f3e8d0 !important;
+    border: 1px solid #c3a878 !important;
+    border-radius: 6px !important;
+    color: #4b3f2f !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ボタン共通 */
+button {
+    padding: 10px 24px;
+    font-size: 0.95em;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: #7b5e3b; /* 木の幹っぽい茶色 */
+    color: #fffdf6;
+    transition: background-color 0.2s ease;
+    margin-top: 14px;
+}
+
+/* ボタン ホバー */
+button:hover {
+    background-color: #6a4d2e;
+}
+
+/* 達成ボタン */
+#tasseiButton {
+    margin-top: 22px;
+    font-weight: 500;
+}
+
+/* 目標表示枠 */
+#userGoal {
+    margin-top: 20px;
+    padding: 14px;
+    background-color: #f3e8d0; /* 木漏れ日感 */
+    border: 1px solid #c3a878;
+    border-radius: 6px;
+}
+
+/* 仲間の様子 */
+#nakamaList div {
+    background-color: #f3e8d0;
+    border: 1px solid #c3a878;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* サブメニュー */
+.menu-container {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}
+
+#menuButton {
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #d8cbb4;
+    color: #5c4631;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+#menuButton:hover {
+    background-color: #c4b18f;
+}
+
+/* メニュー本体 */
+.menu {
+    display: none;
+    position: absolute;
+    top: 34px;
+    right: 0;
+    background-color: #f3e8d0;
+    border: 1px solid #c3a878;
+    border-radius: 4px;
+    padding: 4px 0;
+    min-width: 140px;
+    list-style: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+/* メニュー内ボタン */
+.menu button {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #4b3f2f;
+}
+
+.menu button:hover {
+    background-color: #e0d4b0;
+}
+
+/* ===============================
+   レスポンシブ対応
+   =============================== */
+* {
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 360px) {
+    h1 { font-size: 1.6em; }
+    button { width: 100%; padding: 12px 0; font-size: 1em; }
+    .form-group { max-width: 100%; }
+    #menuButton { font-size: 20px; }
+}
+
+@media screen and (max-width: 480px) {
+    h1 { font-size: 1.75em; }
+    button { width: 100%; }
+    .form-group { max-width: 100%; }
+}
+
+@media screen and (min-width: 768px) {
+    body { font-size: 1.05em; }
+    h1 { font-size: 2.1em; }
+    button { font-size: 1em; padding: 12px 28px; }
+    .screen { padding-top: 70px; }
+}
+

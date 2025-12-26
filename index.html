@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#4CAF50">
+        <title>ヒビタン</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="module" src="lib/Hibitan.js" defer></script>
+        <link href="lib/Hibitan.css" rel="stylesheet" media="all">
+    </head>
+
+    <body>
+
+
+
+        <!--初期画面-->
+
+        <div id="syokiGamen" class="screen">
+            <label for="loginName">名前</label>
+            <input type="text" id="loginName" maxlength="10" placeholder="例：ニックネーム" />
+
+            <label for="loginPassword">パスワード</label>
+            <input type="password" id="loginPassword" maxlength="4" placeholder="例：0627">
+
+            <button id="roguinButton">ログイン</button>
+            <button onclick="startTutorialFromInitial()">新規登録</button>
+        </div>
+
+
+        <div id="step1" class="screen active">
+            <h1>ヒビタンとは</h1>
+            <p>ヒビタンは、<br>日々を淡々と記録するアプリです。</p>
+            <br>
+            <p>出来た日も、<br>出来なかった日も。</p>
+            <p>そこにあるのは、事実だけ。</p>
+            <br>
+            <p>やると決めたのは、自分。<br>やらなかったのも、自分。</p>
+            <p>ヒビタンは、<br>その結果に口出ししません。</p>
+            <div class="button-group">
+                <button onclick="showScreen('step2')">進む</button>
+                <button onclick="tutorialLater()">後で見る</button>
+            </div>
+        </div>
+
+        <!-- ② 日々の記録 -->
+        <div id="step2" class="screen">
+            <h1>日々の記録</h1>
+            <p>その日、出来たかどうか。<br>
+                「記録」ボタンを押すだけで、<br>その事実が記録されます。</p>
+            <div class="button-group">
+                <button onclick="showScreen('step1')">戻る</button>
+                <button onclick="showScreen('step3')">進む</button>
+                <button onclick="tutorialLater()">後で見る</button>
+            </div>
+        </div>
+
+        <!-- ③ 新規登録 -->
+        <div id="step3" class="screen">
+            <h1>新規登録</h1>
+            <p>記録するために、最初に決めること。</p>
+            <p>目標や意気込み、合言葉を決めます。<br>
+                何を続けるかは、自分で決めます。</p>
+            <div class="button-group">
+                <button onclick="showScreen('step2')">戻る</button>
+                <!-- step3 内 -->
+                <button onclick="showStep4()">進む</button>
+                <button onclick="tutorialLater()">後で見る</button>
+            </div>
+        </div>   
+
+        <!-- ④ 合言葉 -->
+        <div id="step4" class="screen">
+            <h1>合言葉</h1>
+            <p>同じ合言葉の人たちの記録を、<br>
+                静かに確認できます。</p>
+            <p>目標、今日の記録、連続日数、意気込み。<br>
+                誰かと比べるためではなく、<br>
+                それぞれが続けている「事実」を見るためのものです。</p>
+            <div class="button-group">
+                <button onclick="showScreen('step3')">戻る</button>
+                <button id="step4Button"></button>
+            </div>
+        </div>
+
+
+        <!--ホーム画面-->
+        <div id="homeGamen" class="screen">
+            <div class="menu-container">
+                <button id="menuButton">・・・</button>
+
+                <ul id="submenu" class="menu">
+                    <li><button id="nakamaButton">仲間の様子</button></li>
+                    <li><button onclick="startTutorialFromHome()">チュートリアル</button></li>
+                </ul>
+            </div>
+
+            <h1>ヒビタン</h1>
+            <p id="date"></p>
+            <p>出来た日も。</p>
+            <p>出来なかった日も。</p>
+            <p>今日をそのまま残すこと。</p>
+
+            <div id="userGoal" style="margin-top:20px;">
+                <p id="mokuhyouHyouzi"></p>
+                <p id="ikigomiHyouzi"></p>
+                <p id="renzokuHyouzi"></p>
+            </div>
+
+            <button id="tasseiButton">記録</button>
+        </div>
+
+        <!--新規登録画面-->
+        <div id="sinkiTourokuGamen" class="screen">
+            <h1>新規登録</h1>
+
+            <!--名前入力-->
+            <div class="form-group">
+                <label for="nameInput">ニックネーム</label>
+                <input type="text" id="nameInput" maxlength="10" placeholder="例：クリボー" />
+            </div>
+
+            <div class="form-group">
+                <label for="passInput">パスワード</label>
+                <input type="password" id="passInput" maxlength="4" placeholder="例：0627" />
+            </div>
+
+            <!--目標入力-->
+            <div class="form-group">
+                <label for="mokuhyouInput">目標</label>
+                <input type="text" id="mokuhyouInput" maxlength="20" placeholder="例：毎日素振り100回" />
+            </div>
+
+            <!--実行頻度-->
+            <!--            <div class="form-group">
+                            <label for="zissiHindo">実施頻度</label>
+                            <select id ="zissiHindo">
+                                <option value="毎日">毎日</option>
+                                <option value="2日に1回">2日に1回</option>
+                                <option value="週1">週1</option>
+                            </select>
+                        </div>-->
+
+            <!--通知時間-->
+            <!--            <div class="form-group">
+                            <label for="tuutiZikan">通知時間</label>
+                            <input type="time" id="tuutiZikan" />
+                        </div>-->
+
+            <!--合言葉-->
+            <div class="form-group">
+                <label for="aikotoba">合言葉</label>
+                <input type="text" id="aikotoba" maxlength="10"/>
+            </div>
+
+            <!--意気込み-->
+            <div class="form-group">
+                <label for="ikigomi">意気込み</label>
+                <input type="text" id="ikigomi" maxlength="30" />
+            </div>
+
+            <!--登録ボタン-->
+            <button id="tourokuButton">登録</button>
+            <button onclick="showScreen('syokiGamen')">戻る</button>
+        </div>
+
+        <!--仲間の様子-->
+        <div id="nakamanoYousu" class="screen">
+            <h1 id="teamHeader">チーム: </h1>
+            <div id="nakamaList"></div>
+            <button onclick="showScreen('homeGamen')">戻る</button>
+        </div>
+
+        <!--機能概要-->
+        <div id="kinouGaiyou" class="screen">
+            <button onclick="showScreen('homeGamen')">戻る</button>
+        </div>
+        
+        <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js')
+    .then(() => console.log('SW registered'))
+    .catch(err => console.error(err));
+}
+</script>
+    </body>
+</html>
+
