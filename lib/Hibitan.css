@@ -129,6 +129,7 @@ button:hover {
 /* 達成ボタン */
 #tasseiButton {
     margin-top: 22px;
+    margin-left: auto;
     font-weight: 500;
 }
 
@@ -149,6 +150,20 @@ button:hover {
     padding: 12px;
     margin-bottom: 10px;
     text-align: left;
+    word-break: break-word; /* 長い文章も折り返す */
+}
+
+#nakamaList div .label {
+    font-weight: 600;
+    display: inline-block;
+    width: 70px; /* ラベル幅 */
+}
+
+#nakamaList div .note {
+    display: block;
+    margin-top: 4px;
+    color: #4b3f2f;
+    font-style: italic;
 }
 
 /* サブメニュー */
@@ -234,3 +249,13 @@ button:hover {
     .screen { padding-top: 70px; }
 }
 
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 0.95em;
+    border-radius: 4px;
+    border: 1px solid #c3a878;
+    background-color: #f3e8d0;
+    box-sizing: border-box;
+    resize: vertical; /* 高さだけ変更可能 */
+}
