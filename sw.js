@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hibitan-cache-v6'; // キャッシュ名を更新するごとに変える
+const CACHE_NAME = 'hibitan-cache-v7'; // キャッシュ名を更新するごとに変える
 const FILES_TO_CACHE = [
   '/',
   '/index.html',
