@@ -1,261 +1,386 @@
-/* ===============================
-   Hibitan.css - 森の中を歩くイメージ
-   =============================== */
-
-/* 全体 */
+/* ===== 背景をレイヤー構造に ===== */
 body {
-    font-family: "ヒラギノ角ゴシック W3","游ゴシック","メイリオ",sans-serif;
     margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #d9e4d0, #e0d4b0); /* 森の中背景 */
-    color: #4b3f2f;
-    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    background:
+        radial-gradient(circle at top, #e9f7ef 0%, transparent 60%),
+        linear-gradient(180deg, #f2f4f7 0%, #ffffff 60%);
+    color: #333;
 }
 
-/* 画面共通 */
+/* ===== 画面全体を浮かせる ===== */
 .screen {
     display: none;
-    padding: 48px 20px;
-    text-align: center;
     min-height: 100vh;
-    box-sizing: border-box;
-    max-width: 520px;
-    margin: 0 auto;
-    background: transparent; /* 背景は透明 */
+    padding: 28px 20px 40px;
+    animation: fadeUp 0.45s cubic-bezier(.22,.61,.36,1);
 }
 
-/* 初期画面のみ表示 */
-#syokiGamen {
+.screen.active {
     display: block;
 }
 
-/* 見出し */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== 見出しを少し立体に ===== */
 h1 {
-    font-size: 1.9em;
-    margin-bottom: 20px;
-    font-weight: 500;
+    text-align: center;
+    margin: 14px 0 22px;
+    font-size: 1.9rem;
+    letter-spacing: 0.06em;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* 日付 */
-#date {
-    font-size: 0.95em;
-    color: #6a5333; /* 落ち着いた土っぽい茶色 */
-    margin-bottom: 20px;
-}
-
-#syokiGamen button:first-of-type {
-    margin-bottom: 70px;      
-    padding: 10px 24px;         
-    font-size: 1em;          
-    border-radius: 4px;         
-    border: none;               
-    background-color: #7b5e3b;  
-    color: #fffdf6;             
-    cursor: pointer;
-}
-
-
-
-
-
-/* 説明文 */
-p {
-    margin: 6px 0;
-    line-height: 1.6;
-}
-
-/* フォームグループ */
-.form-group {
-    margin: 20px auto;
-    max-width: 360px;
-    text-align: left;
-}
-
-/* ラベル */
-label {
-    display: block;
-    margin-bottom: 4px;
-    font-size: 0.95em;
-    color: #4b3f2f;
-}
-
-/* 入力 */
-input[type="text"],
-input[type="password"],
-input[type="number"],
-input[type="time"],
-select,
+/* ===== フォーム共通 ===== */
+input,
 textarea {
     width: 100%;
-    padding: 8px 10px;
-    font-size: 0.95em;
-    border-radius: 4px;
-    border: 1px solid #c3a878; /* 木の質感 */
-    background-color: #f3e8d0; /* 木漏れ日感 */
-    box-sizing: border-box;
+    padding: 13px 15px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background: linear-gradient(180deg, #ffffff, #fafafa);
+    box-shadow:
+        inset 0 1px 2px rgba(0,0,0,0.05),
+        0 4px 10px rgba(0,0,0,0.06);
 }
 
-/* ログインフォームの入力欄を新規登録フォームと同じに固定 */
-#loginName,
-#loginPassword,
-#loginName:focus,
-#loginPassword:focus {
-    background-color: #f3e8d0 !important;
-    border: 1px solid #c3a878 !important;
-    border-radius: 6px !important;
-    color: #4b3f2f !important;
-    outline: none !important;
-    box-shadow: none !important;
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow:
+        0 0 0 3px rgba(76,175,80,0.15),
+        0 6px 14px rgba(0,0,0,0.08);
 }
 
-/* ボタン共通 */
+/* ===== ボタンを立体に ===== */
 button {
-    padding: 10px 24px;
-    font-size: 0.95em;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    background-color: #7b5e3b; /* 木の幹っぽい茶色 */
-    color: #fffdf6;
-    transition: background-color 0.2s ease;
+    width: 100%;
+    padding: 15px;
     margin-top: 14px;
-}
-
-/* ボタン ホバー */
-button:hover {
-    background-color: #6a4d2e;
-}
-
-/* 達成ボタン */
-#tasseiButton {
-    margin-top: 22px;
-    margin-left: auto;
-    font-weight: 500;
-}
-
-/* 目標表示枠 */
-#userGoal {
-    margin-top: 20px;
-    padding: 14px;
-    background-color: #f3e8d0; /* 木漏れ日感 */
-    border: 1px solid #c3a878;
-    border-radius: 6px;
-}
-
-/* 仲間の様子 */
-#nakamaList div {
-    background-color: #f3e8d0;
-    border: 1px solid #c3a878;
-    border-radius: 6px;
-    padding: 12px;
-    margin-bottom: 10px;
-    text-align: left;
-    word-break: break-word; /* 長い文章も折り返す */
-}
-
-#nakamaList div .label {
+    border: none;
+    border-radius: 16px;
+    font-size: 1rem;
     font-weight: 600;
-    display: inline-block;
-    width: 70px; /* ラベル幅 */
+    background: linear-gradient(180deg, #5fd068, #3fae49);
+    color: #fff;
+    cursor: pointer;
+    box-shadow:
+        0 10px 20px rgba(76,175,80,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.4);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-#nakamaList div .note {
-    display: block;
-    margin-top: 4px;
-    color: #4b3f2f;
-    font-style: italic;
+button:active {
+    transform: translateY(2px);
+    box-shadow:
+        0 4px 10px rgba(76,175,80,0.3),
+        inset 0 2px 6px rgba(0,0,0,0.2);
 }
 
-/* サブメニュー */
+/* ===== 複数ボタン ===== */
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+/* ===== ホーム中央カード ===== */
+#userGoal {
+    background: linear-gradient(180deg, #ffffff, #f9fafb);
+    border-radius: 20px;
+    padding: 18px 16px;
+    margin: 24px 0;
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.12),
+        0 4px 10px rgba(0,0,0,0.08);
+}
+
+#userGoal p {
+    margin: 8px 0;
+}
+
+/* ===== 一言日記を浮かせる ===== */
+.form-group {
+    background: rgba(255,255,255,0.9);
+    border-radius: 20px;
+    padding: 18px;
+    margin: 22px 0;
+    box-shadow:
+        0 14px 30px rgba(0,0,0,0.12),
+        0 4px 8px rgba(0,0,0,0.06);
+}
+
+/* ===== メニュー（フローティング） ===== */
 .menu-container {
-    position: absolute;
+    position: fixed;
     top: 14px;
     right: 14px;
+    z-index: 100;
 }
 
 #menuButton {
-    font-size: 12px;
-    font-weight: 600;
-    background-color: #d8cbb4;
-    color: #5c4631;
-    border: none;
-    border-radius: 4px;
-    padding: 15px 10px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    transition: all 0.2s ease;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #ffffff, #f0f0f0);
+    color: #333;
+    font-size: 1.3rem;
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
-#menuButton:hover {
-    background-color: #c4b18f;
-}
-
-/* メニュー本体 */
 .menu {
-    display: none;
-    position: absolute;
-    top: 34px;
-    right: 0;
-    background-color: #f3e8d0;
-    border: 1px solid #c3a878;
-    border-radius: 4px;
-    padding: 4px 0;
-    min-width: 140px;
     list-style: none;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 10;
+    padding: 10px;
+    margin-top: 10px;
+    background: linear-gradient(180deg, #ffffff, #f7f7f7);
+    border-radius: 18px;
+    box-shadow:
+        0 24px 50px rgba(0,0,0,0.25),
+        0 6px 14px rgba(0,0,0,0.15);
+    display: none;
 }
 
-/* メニュー内ボタン */
-.menu button {
-    width: 100%;
-    text-align: left;
+.menu li button {
     background: none;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 0.9em;
-    color: #4b3f2f;
+    color: #333;
+    margin: 0;
+    padding: 12px 10px;
+    text-align: left;
+    box-shadow: none;
+}
+/* ===== 仲間カードを明るく ===== */
+.nakama-card {
+    background: linear-gradient(180deg, #ffffff, #f0f8f4); /* 明るいグリーン寄り */
+    border-left: 5px solid #6fcf97; /* 柔らかい緑でアクセント */
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 14px;
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.08),  /* 軽めの影で浮かせる */
+        0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.menu button:hover {
-    background-color: #e0d4b0;
+.nakama-card:hover {
+    transform: translateY(-4px); /* ホバーで浮かせる */
+    box-shadow:
+        0 16px 28px rgba(0,0,0,0.12),
+        0 6px 12px rgba(0,0,0,0.06);
 }
 
-/* ===============================
-   レスポンシブ対応
-   =============================== */
-* {
-    box-sizing: border-box;
+
+/* ===== 日付テキスト ===== */
+#date {
+    font-size: 0.9rem;
+    color: #666;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-@media screen and (max-width: 360px) {
-    h1 { font-size: 1.6em; }
-    button { width: 100%; padding: 12px 0; font-size: 1em; }
-    .form-group { max-width: 100%; }
-    #menuButton { font-size: 20px; }
+
+/* ===== カラートークン ===== */
+:root {
+    --main: #2e7d32;       /* 深めグリーン */
+    --main-soft: #e8f5e9;
+    --accent: #4f7cff;    /* アクセントブルー */
+    --danger: #ff8a65;
 }
 
-@media screen and (max-width: 480px) {
-    h1 { font-size: 1.75em; }
-    button { width: 100%; }
-    .form-group { max-width: 100%; }
+/* ===== 見出しに色の芯 ===== */
+h1 {
+    color: var(--main);
+    text-shadow: 0 3px 8px rgba(46,125,50,0.25);
 }
 
-@media screen and (min-width: 768px) {
-    body { font-size: 1.05em; }
-    h1 { font-size: 2.1em; }
-    button { font-size: 1em; padding: 12px 28px; }
-    .screen { padding-top: 70px; }
+/* ===== メインボタンを強調 ===== */
+button {
+    background: linear-gradient(
+        180deg,
+        #5adf7a,
+        var(--main)
+    );
+    box-shadow:
+        0 12px 26px rgba(46,125,50,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.5);
 }
 
-textarea {
-    width: 100%;
-    padding: 8px 10px;
-    font-size: 0.95em;
-    border-radius: 4px;
-    border: 1px solid #c3a878;
-    background-color: #f3e8d0;
-    box-sizing: border-box;
-    resize: vertical; /* 高さだけ変更可能 */
+button:active {
+    box-shadow:
+        0 6px 14px rgba(46,125,50,0.4),
+        inset 0 3px 6px rgba(0,0,0,0.25);
+}
+
+/* ===== サブボタン（戻る・後で見る） ===== */
+.button-group button:not(:first-child) {
+    background: linear-gradient(180deg, #ffffff, #f1f3f5);
+    color: var(--main);
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* ===== ホームの中央カードを印象的に ===== */
+/*#userGoal {
+    background:
+        linear-gradient(180deg, #ffffff 0%, var(--main-soft) 100%);
+    border-left: 6px solid var(--main);
+}*/
+
+/* ===== 連続日数を強調 ===== */
+#renzokuHyouzi {
+    font-weight: 700;
+    color: var(--main);
+    background: rgba(46,125,50,0.12);
+    padding: 6px 12px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+/* ===== 一言日記ラベル ===== */
+label {
+    font-weight: 600;
+    color: var(--main);
+}
+
+/* ===== 記録ボタンを特別扱い ===== */
+#tasseiButton {
+    background: linear-gradient(
+        180deg,
+        var(--accent),
+        #2f5bff
+    );
+    box-shadow:
+        0 14px 30px rgba(79,124,255,0.45);
+}
+
+/* ===== メニューをアクセントカラーに ===== */
+#menuButton {
+    background: linear-gradient(180deg, var(--accent), #355cff);
+    color: #fff;
+    box-shadow:
+        0 14px 30px rgba(79,124,255,0.5);
+}
+
+/* ===== 仲間カードに差し色 ===== */
+.nakama-card {
+    border-left: 5px solid var(--accent);
+}
+
+/* ===== 日付を控えめに装飾 ===== */
+#date {
+    color: var(--main);
+    opacity: 0.75;
+}
+
+/* ===== 森カラーパレット ===== */
+:root {
+    --forest-main: #2f5d3a;   /* 深い森 */
+    --forest-soft: #e6f2ea;   /* 若葉・苔 */
+    --forest-accent: #8b6f4e; /* 木・土 */
+    --forest-light: #f7faf8;
+}
+
+/* ===== 見出し ===== */
+h1 {
+    color: var(--forest-main);
+    text-shadow: 0 3px 8px rgba(47,93,58,0.25);
+}
+
+/* ===== 全体背景を森に ===== */
+body {
+    background:
+        radial-gradient(circle at top, #eef6f1 0%, transparent 65%),
+        linear-gradient(180deg, var(--forest-light) 0%, #ffffff 70%);
+}
+
+/* ===== メインボタン ===== */
+button {
+    background: linear-gradient(
+        180deg,
+        #5f9c78,
+        var(--forest-main)
+    );
+    box-shadow:
+        0 12px 26px rgba(47,93,58,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.45);
+}
+
+button:active {
+    box-shadow:
+        0 6px 14px rgba(47,93,58,0.4),
+        inset 0 3px 6px rgba(0,0,0,0.25);
+}
+
+/* ===== サブボタン ===== */
+.button-group button:not(:first-child) {
+    background: linear-gradient(180deg, #ffffff, #f1f4f2);
+    color: var(--forest-main);
+}
+
+/* ===== 中央カード ===== */
+/*#userGoal {
+    background:
+        linear-gradient(180deg, #ffffff 0%, var(--forest-soft) 100%);
+    border-left: 6px solid var(--forest-main);
+}*/
+
+/* ===== 連続日数 ===== */
+#renzokuHyouzi {
+    font-weight: 700;
+    color: var(--forest-main);
+    background: rgba(47,93,58,0.14);
+    padding: 6px 12px;
+    border-radius: 12px;
+}
+
+/* ===== ラベル ===== */
+label {
+    color: var(--forest-main);
+    font-weight: 600;
+}
+
+/* ===== 記録ボタンを特別に ===== */
+#tasseiButton {
+    background: linear-gradient(
+        180deg,
+        #b08968,
+        var(--forest-accent)
+    );
+    box-shadow:
+        0 14px 30px rgba(139,111,78,0.45);
+}
+
+/* ===== メニューボタン ===== */
+#menuButton {
+    background: linear-gradient(
+        180deg,
+        #7b5e3b,
+        var(--forest-accent)
+    );
+    color: #fff;
+    box-shadow:
+        0 14px 30px rgba(139,111,78,0.45);
+}
+
+/* ===== 仲間カード ===== */
+.nakama-card {
+    border-left: 5px solid var(--forest-accent);
+}
+
+/* ===== 日付 ===== */
+#date {
+    color: var(--forest-main);
+    opacity: 0.75;
 }
