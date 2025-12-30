@@ -96,15 +96,16 @@
 
         <!--ホーム画面-->
         <div id="homeGamen" class="screen">
-            <div class="menu-container">
-                <button id="menuButton">・・・</button>
-
-                <ul id="submenu" class="menu">
-                    <li><button id="nakamaButton">仲間の様子</button></li>
-                    <li><button onclick="showScreen('commentGamen')">コメント</button></li>
-                    <li><button onclick="startTutorialFromHome()">チュートリアル</button></li>
-                </ul>
-            </div>
+            <!--            <div class="menu-container">
+                            <button id="menuButton">・・・</button>
+            
+                            <ul id="submenu" class="menu">
+                                <li><button id="nakamaButton">仲間の様子</button></li>
+                                <li><button id="editProfileBtn">プロフィール編集</button></li>
+                                <li><button onclick="showScreen('commentGamen')">コメント</button></li>
+                                <li><button onclick="startTutorialFromHome()">チュートリアル</button></li>
+                            </ul>
+                        </div>-->
 
             <h1>ヒビタン</h1>
             <p id="date"></p>
@@ -123,6 +124,14 @@
                 <textarea maxlength="100" id="dailyNoteInput" rows="4" placeholder="任意"></textarea>
                 <button id="tasseiButton">記録</button>
             </div>
+
+            <!-- サブメニュー -->
+            <div id="bottomMenu" class="bottom-menu">
+                <button onclick="showScreen('commentGamen')" class="bottom-btn">コメント</button>
+                <button id="editProfileBtn" class="bottom-btn">編集</button>
+                <button id="nakamaButton" class="bottom-btn">仲間</button>
+            </div>
+
         </div>
 
 
@@ -170,6 +179,30 @@
             <div id="nakamaList"></div>
             <button onclick="showScreen('homeGamen')">戻る</button>
         </div>
+
+        <!-- 更新 -->
+        <div id="editProfileScreen" class="screen">
+            <h1>プロフィール編集</h1>
+
+            <div class="form-group">
+                <label for="editName">ニックネーム</label>
+                <input type="text" id="editName" placeholder="名前を入力">
+            </div>
+
+            <div class="form-group">
+                <label for="editMokuhyou">目標</label>
+                <input type="text" id="editMokuhyou" placeholder="目標を入力">
+            </div>
+
+            <div class="form-group">
+                <label for="editIkigomi">意気込み</label>
+                <input type="text" id="editIkigomi" placeholder="意気込みを入力">
+            </div>
+
+            <button id="updateProfileBtn">更新</button>
+            <button onclick="showScreen('homeGamen')">戻る</button>
+        </div>
+
 
         <!--機能概要-->
         <div id="kinouGaiyou" class="screen">
