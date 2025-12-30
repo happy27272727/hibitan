@@ -193,7 +193,7 @@ button:active {
 
 /* ===== カラートークン ===== */
 :root {
-    --main: #2e7d32;       /* 深めグリーン */
+    --main: #4c7d50;      
     --main-soft: #e8f5e9;
     --accent: #4f7cff;    /* アクセントブルー */
     --danger: #ff8a65;
@@ -417,7 +417,7 @@ label {
 
 #submenuContainer {
     position: fixed;
-    bottom: 0;
+    bottom: 25px;
     left: 0;
     width: 100%;
     display: flex;
