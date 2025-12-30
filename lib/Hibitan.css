@@ -1,8 +1,8 @@
-/* ===== カラーパレット（明るい森系/黄緑寄り） ===== */
+/* ===== カラーパレット（明るい黄緑・濃いめ） ===== */
 :root {
-    --main: #5fd068;        /* 明るい黄緑 */
-    --main-soft: #e9f7ef;   /* 背景用薄黄緑 */
-    --accent: #7ee07e;      /* アクセント */
+    --main: #50c850;        /* 少し濃い黄緑 */
+    --main-soft: #d6f7d6;   /* 背景用薄黄緑 */
+    --accent: #4cd24c;      /* アクセント */
     --danger: #ff8a65;
 }
 
@@ -14,7 +14,7 @@ body {
     color: #333;
     background:
         radial-gradient(circle at top, #f0fff4 0%, transparent 65%),
-        linear-gradient(180deg, var(--main-soft) 0%, #ffffff 70%);
+        linear-gradient(180deg, #f0f7f0 0%, #ffffff 70%);
 }
 
 /* ===== 画面全体を浮かせる ===== */
@@ -41,7 +41,7 @@ h1 {
     font-size: 1.9rem;
     letter-spacing: 0.06em;
     color: var(--main);
-    text-shadow: 0 3px 8px rgba(95,208,104,0.25);
+    text-shadow: 0 3px 8px rgba(80,200,80,0.25);
 }
 
 /* ===== フォーム共通 ===== */
@@ -63,7 +63,7 @@ textarea:focus {
     outline: none;
     border-color: var(--main);
     box-shadow:
-        0 0 0 3px rgba(95,208,104,0.15),
+        0 0 0 3px rgba(80,200,80,0.15),
         0 6px 14px rgba(0,0,0,0.08);
 }
 
@@ -77,10 +77,10 @@ button {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    background: linear-gradient(180deg, #a6f7a6, var(--main));
+    background: linear-gradient(180deg, #7ef87e, var(--main));
     color: #fff;
     box-shadow:
-        0 12px 26px rgba(95,208,104,0.45),
+        0 12px 26px rgba(80,200,80,0.45),
         inset 0 1px 0 rgba(255,255,255,0.45);
     transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
@@ -88,7 +88,7 @@ button {
 button:active {
     transform: translateY(2px);
     box-shadow:
-        0 6px 14px rgba(95,208,104,0.4),
+        0 6px 14px rgba(80,200,80,0.4),
         inset 0 3px 6px rgba(0,0,0,0.25);
 }
 
@@ -157,7 +157,7 @@ button:active {
 #renzokuHyouzi {
     font-weight: 700;
     color: var(--main);
-    background: rgba(95,208,104,0.14);
+    background: rgba(80,200,80,0.14);
     padding: 6px 12px;
     border-radius: 12px;
     display: inline-block;
@@ -165,8 +165,8 @@ button:active {
 
 /* ===== 記録ボタン特別扱い ===== */
 #tasseiButton {
-    background: linear-gradient(180deg, #b7e07b, #7ee07e);
-    box-shadow: 0 14px 30px rgba(126,224,126,0.45);
+    background: linear-gradient(180deg, #a8f59a, var(--accent));
+    box-shadow: 0 14px 30px rgba(76,208,76,0.45);
 }
 
 /* ===== メニュー ===== */
@@ -182,10 +182,10 @@ button:active {
     height: 44px;
     padding: 0;
     border-radius: 50%;
-    background: linear-gradient(180deg, #a6f7a6, #7ee07e);
+    background: linear-gradient(180deg, #7ef87e, var(--accent));
     color: #fff;
     font-size: 1.3rem;
-    box-shadow: 0 14px 30px rgba(126,224,126,0.45);
+    box-shadow: 0 14px 30px rgba(76,208,76,0.45);
 }
 
 .menu {
@@ -231,6 +231,11 @@ button:active {
 @keyframes sway {
     0%, 100% { transform: translateX(0); }
     50% { transform: translateX(5px); }
+}
+
+/* ===== 新規登録ボタン下マージン調整 ===== */
+#syokiGamen > button {
+    margin-bottom: 57px;
 }
 
 /* ===== 下部メニュー ===== */
