@@ -387,7 +387,7 @@ label {
 
 .bottom-menu {
     position: fixed;
-    bottom: 0;
+    bottom: 25px;
     left: 0;
     width: 100%;
     display: flex;           /* 横並びにする */
@@ -417,7 +417,7 @@ label {
 
 #submenuContainer {
     position: fixed;
-    bottom: 25px;
+    bottom: 0px;
     left: 0;
     width: 100%;
     display: flex;
