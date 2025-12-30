@@ -217,10 +217,10 @@ button:active {
 #syokiGamen::before {
     content: '';
     position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 200%;
-    height: 200%;
+    width: 100%;   /* 必要な分だけ拡大 */
+    height: 100%;
+    top: -10%;
+    left: -10%;
     background: url('leaf-pattern.png') repeat;
     opacity: 0.06;
     pointer-events: none;
@@ -346,3 +346,9 @@ button:active {
     pointer-events: none;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* 横スクロール禁止 */
+}
