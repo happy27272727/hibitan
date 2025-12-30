@@ -21,7 +21,7 @@ body {
 .screen {
     display: none;
     min-height: 100vh;
-    padding: 28px 20px 40px;
+    padding: 40px 20px 40px;
     animation: fadeUp 0.45s cubic-bezier(.22,.61,.36,1);
 }
 
@@ -37,7 +37,7 @@ body {
 /* ===== 見出し ===== */
 h1 {
     text-align: center;
-    margin: 14px 0 22px;
+    margin: 50px 0 22px;
     font-size: 1.9rem;
     letter-spacing: 0.06em;
     color: var(--main);
@@ -151,6 +151,7 @@ button:active {
     color: var(--main);
     opacity: 0.75;
     text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: right;
 }
 
 /* ===== 連続日数 ===== */
