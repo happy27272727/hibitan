@@ -325,13 +325,13 @@ button:active {
     transform-origin:left center;
 }
 
-#gameArea {
+/*#gameArea {
     position: relative;
-    width: 100vw;      /* 画面幅いっぱい */
-    height: 300px;     /* 高さはお好みで */
+    width: 100vw;       画面幅いっぱい 
+    height: 300px;      高さはお好みで 
     border: 1px solid #ccc;
-    overflow: hidden;  /* 弾やキャラがはみ出ても隠す */
-}
+    overflow: hidden;   弾やキャラがはみ出ても隠す 
+}*/
 
 .bullet {
     position: absolute;
@@ -353,3 +353,17 @@ html, body {
     width: 100%;
     overflow-x: hidden; /* 横スクロール禁止 */
 }
+
+#gameArea {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  margin: 20px auto;
+  border: 5px solid #4caf50;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 -4px 10px rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+

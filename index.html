@@ -20,10 +20,10 @@
     </head>
 
     <body>
-        <!--初期画面-->
+        <!--ログイン画面-->
         <div id="syokiGamen" class="screen active">
             <h1>ヒビタン</h1>
-            <button onclick="startTutorialFromInitial()">新規登録</button>
+            <button id="startTutorialBtn">新規登録</button>
             <label for="loginName">ニックネーム</label>
             <input type="text" id="loginName" maxlength="15" placeholder="例：くり" />
             <label for="loginPassword">パスワード</label>
@@ -32,8 +32,8 @@
             <!-- キャラクター用 -->
             <p>ドラッグ&ドロップで狙撃！</p>
             <p>可哀そうになったらタップして餌を置こう🍚</p>
-            <div id="gameArea" style="position:relative; width:100vw; height:300px; border:1px solid #ccc; overflow:hidden;">
-                <div id="character" style="position:absolute; bottom:0; left:0; font-size:40px; cursor:pointer;">🐱</div>
+            <div id="gameArea">
+                <div id="character">🐱</div>
             </div>
         </div>
 
@@ -47,8 +47,8 @@
             <p>やると決めたのは、自分。<br>やらなかったのも、自分。</p>
             <p>ヒビタンは、<br>その結果に口出ししません。</p>
             <div class="button-group">
-                <button onclick="showScreen('step2')">進む</button>
-                <button onclick="tutorialLater()">後で見る</button>
+                <button data-action="next" data-next="step2">次へ</button>
+                <button data-action="skip">後で見る</button>
             </div>
         </div>
 
@@ -58,9 +58,9 @@
             <p>その日、出来たかどうか。<br>
                 「記録」ボタンを押すだけで、<br>その事実が記録されます。</p>
             <div class="button-group">
-                <button onclick="showScreen('step3')">進む</button>
-                <button onclick="showScreen('step1')">戻る</button>
-                <button onclick="tutorialLater()">後で見る</button>
+                <button data-action="next" data-next="step3">次へ</button>
+                <button data-action="back">戻る</button>
+                <button data-action="skip">後で見る</button>
             </div>
         </div>
 
@@ -72,9 +72,9 @@
                 何を続けるかは、あなた次第。</p>
             <div class="button-group">
                 <!-- step3 内 -->
-                <button onclick="showStep4()">進む</button>
-                <button onclick="showScreen('step2')">戻る</button>
-                <button onclick="tutorialLater()">後で見る</button>
+                <button data-action="next" data-next="step4">次へ</button>
+                <button data-action="back">戻る</button>
+                <button data-action="skip">後で見る</button>
             </div>
         </div>
 
@@ -87,24 +87,14 @@
                 誰かと比べるためではなく、<br>
                 それぞれが続けている「事実」を見るためのものです。</p>
             <div class="button-group">
-                <button onclick="showScreen('step3')">戻る</button>
-                <button id="step4Button"></button>
+                <button id="step4Button">新規登録へ</button>
+                <button data-action="back">戻る</button>
             </div>
         </div>
 
 
         <!--ホーム画面-->
         <div id="homeGamen" class="screen">
-            <!--            <div class="menu-container">
-                            <button id="menuButton">・・・</button>
-            
-                            <ul id="submenu" class="menu">
-                                <li><button id="nakamaButton">仲間の様子</button></li>
-                                <li><button id="editProfileBtn">プロフィール編集</button></li>
-                                <li><button onclick="showScreen('commentGamen')">コメント</button></li>
-                                <li><button onclick="startTutorialFromHome()">チュートリアル</button></li>
-                            </ul>
-                        </div>-->
 
             <h1>ヒビタン</h1>
             <p id="date"></p>
@@ -126,7 +116,7 @@
 
             <!-- サブメニュー -->
             <div id="bottomMenu" class="bottom-menu">
-                <button onclick="showScreen('commentGamen')" class="bottom-btn">コメント</button>
+                <button data-nav="commentGamen" class="bottom-btn">コメント</button>
                 <button id="editProfileBtn" class="bottom-btn">編集</button>
                 <button id="nakamaButton" class="bottom-btn">仲間</button>
             </div>
@@ -169,14 +159,14 @@
 
             <!--登録ボタン-->
             <button id="tourokuButton">登録</button>
-            <button onclick="showScreen('syokiGamen')">戻る</button>
+            <button data-action="back">戻る</button>
         </div>
 
         <!--仲間の様子-->
         <div id="nakamanoYousu" class="screen">
-            <h1 id="teamHeader">チーム: </h1>
+            <h1 id="teamHeader">チーム:</h1>
             <div id="nakamaList"></div>
-            <button onclick="showScreen('homeGamen')">戻る</button>
+            <button data-action="back">戻る</button>
         </div>
 
         <!-- 更新 -->
@@ -199,13 +189,13 @@
             </div>
 
             <button id="updateProfileBtn">更新</button>
-            <button onclick="showScreen('homeGamen')">戻る</button>
+            <button data-action="back">戻る</button>
         </div>
 
 
         <!--機能概要-->
         <div id="kinouGaiyou" class="screen">
-            <button onclick="showScreen('homeGamen')">戻る</button>
+            <button data-action="back">戻る</button>
         </div>
 
 
@@ -222,7 +212,7 @@
                           ></textarea>
             </div>
             <button id="commentSendButton">登録</button>
-            <button onclick="showScreen('homeGamen')">戻る</button>
+            <button data-action="back">戻る</button>
         </div>
 
 
