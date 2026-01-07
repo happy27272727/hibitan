@@ -12,7 +12,8 @@
         <title>ヒビタン</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script type="module" src="lib/Hibitan.js"></script>
+        <!--<script type="module" src="lib/Hibitan.js"></script>-->
+        <script type="module" src="lib/Hibitan.js?v=3"></script>
         <link href="lib/Hibitan.css" rel="stylesheet" media="all">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -40,9 +41,6 @@
         <div id="step1" class="screen">
             <h1>ヒビタンとは</h1>
             <p>ヒビタンは、<br>日々を淡々と記録するアプリです。</p>
-            <br>
-            <p>出来た日も、<br>出来なかった日も。</p>
-            <p>そこにあるのは、事実だけ。</p>
             <br>
             <p>やると決めたのは、自分。<br>やらなかったのも、自分。</p>
             <p>ヒビタンは、<br>その結果に口出ししません。</p>
@@ -83,7 +81,7 @@
             <h1>合言葉</h1>
             <p>同じ合言葉の人たちの記録を、<br>
                 静かに確認できます。</p>
-            <p>目標、今日の記録、連続日数、意気込み。<br>
+            <p>目標、今日の記録、連続日数、意気込み、日記。<br>
                 誰かと比べるためではなく、<br>
                 それぞれが続けている「事実」を見るためのものです。</p>
             <div class="button-group">
@@ -102,7 +100,8 @@
 
                 <!-- ポップオーバー -->
                 <div id="userSubMenu" class="hidden">
-                    <button onclick="logout()">ログアウト</button>
+                    <button id="logoutBtn">🚪 ログアウト</button>
+                    <button id="seityouBtn">🐣 ヒビタン成長記録</button>
                 </div>
             </div>
 
@@ -188,6 +187,11 @@
                 <label for="editName">ニックネーム</label>
                 <input type="text" id="editName" placeholder="名前を入力">
             </div>
+            
+            <div class="form-group">
+                <label for="editPass">パスワード</label>
+                <input type="text" id="editPass" placeholder="パスワードを入力">
+            </div>
 
             <div class="form-group">
                 <label for="editMokuhyou">目標</label>
@@ -225,6 +229,18 @@
             <button id="commentSendButton">登録</button>
             <button data-action="back">戻る</button>
         </div>
+
+        <!-- ヒビタン成長記録 -->
+        <div id="seityouKirokuScreen" class="screen">
+            <h1 class="seityou-title">🐣 ヒビタン成長記録</h1>
+
+            <div id="seityouList" class="seityou-list">
+                <!-- JSで挿入 -->
+            </div>
+
+            <button data-action="back" class="back-btn">戻る</button>
+        </div>
+
 
 
         <script>
