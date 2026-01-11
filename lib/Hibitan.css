@@ -478,3 +478,89 @@ html, body {
   margin-top: 24px;
 }
 
+
+
+
+#calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.calendarCell {
+  border: 1px solid #ccc;
+  min-height: 50px;
+  text-align: center;
+  white-space: pre-line;
+  font-size: 14px;
+}
+
+
+#calendarWeek,
+#calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#calendarWeek div {
+  text-align: center;
+  font-weight: bold;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+#calendarGrid {
+  gap: 4px;
+}
+
+.calendarCell {
+  border: 1px solid #ddd;
+  min-height: 48px;
+  padding: 4px;
+  text-align: center;
+  font-size: 14px;
+  white-space: pre-line; /* ← 改行を有効にする */
+  cursor: pointer;
+  background: #fff;
+}
+
+.calendarCell:hover {
+  background: #f3f8ff;
+}
+
+#calendarHeader button {
+  all: unset;          /* ← 既存buttonスタイルを無効化 */
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+}
+
+#calendarHeader button:hover {
+  background: #eef4ff;
+  border-radius: 6px;
+}
+
+
+
+
+#calendarHeader button {
+  all: unset !important;
+  cursor: pointer !important;
+  font-size: 20px !important;
+  padding: 6px 10px !important;
+  line-height: 1 !important;
+}
+
+#calendarHeader button:hover {
+  background: #eef4ff !important;
+  border-radius: 6px !important;
+}
+
+
+.today-date {
+    font-size: 1.3rem;          /* 少し大きく */
+    font-weight: 600;           /* 太さで主役感 */
+    text-align: center;         /* 中央寄せ */
+    margin: 12px 0 8px;
+    color: #2c3e50;              /* 目に優しい濃色 */
+}
