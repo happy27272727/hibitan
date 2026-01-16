@@ -564,3 +564,40 @@ html, body {
     margin: 12px 0 8px;
     color: #2c3e50;              /* 目に優しい濃色 */
 }
+
+
+
+.color-btn {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #f2f2f2;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.color-btn:active {
+  transform: scale(0.96);
+}
+
+:root[data-theme="dark"] {
+  --bg: #111;
+  --text: #fff;
+}
+
+
+:root {
+  --main: #50c850;
+  --main-soft: #d6f7d6;
+  --accent: #4cd24c;
+}
+
+/* 例：使う場所 */
+header {
+  background: var(--main);
+}
+
+.button-primary {
+  background: var(--accent);
+  color: white;
+}
