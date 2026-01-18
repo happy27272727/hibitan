@@ -47,7 +47,7 @@ h1 {
 /* ===== フォーム共通 ===== */
 input,
 textarea {
-    width: 100%;
+    width: 90%;
     padding: 13px 15px;
     border-radius: 14px;
     border: 1px solid #ddd;
@@ -601,3 +601,27 @@ header {
   background: var(--accent);
   color: white;
 }
+
+
+/* 一言日記の下のコメントマーク */
+/* 一言日記の下のコメントマーク（目立つ版） */
+.comment-btn {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: #4cb34c;            /* 少し濃い緑 */
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: rgba(76, 179, 76, 0.1);  /* 薄い緑背景 */
+  transition: color 0.2s, transform 0.15s, background 0.2s;
+}
+
+.comment-btn:hover {
+  color: #2c9232;               /* 濃いめの緑 */
+  background: rgba(76, 179, 76, 0.2); /* ハイライト増し */
+  transform: scale(1.08);
+  text-decoration: none;
+}
+
