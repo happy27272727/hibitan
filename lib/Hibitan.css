@@ -73,7 +73,6 @@ button {
     width: 100%;
     padding: 15px;
     margin-top: 14px;
-    margin-bottom: 20px;
     border: none;
     border-radius: 16px;
     font-size: 1rem;
@@ -931,6 +930,5 @@ header {
 
 #userMenuBtn {
     width: auto;        /* 100%を解除 */
-    margin-top: 0;      /* 14px解除 */
     padding: 0px 0px;  /* 適度に */
 }
