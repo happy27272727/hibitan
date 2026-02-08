@@ -132,7 +132,7 @@ button:active {
     border-left: 5px solid var(--accent);
     border-radius: 18px;
     padding: 16px;
-    margin-bottom: -23px;
+    margin-bottom: 20px;
     box-shadow:
         0 10px 20px rgba(0,0,0,0.08),
         0 4px 8px rgba(0,0,0,0.05);
@@ -243,7 +243,7 @@ button:active {
 /* ===== 下部メニュー ===== */
 .bottom-menu {
     position: fixed;
-    bottom: 25px;
+    bottom: 0px;
     left: 0;
     width: 100%;
     display: flex;
@@ -655,7 +655,7 @@ header {
 /* 仲間画面：下固定エリア */
 .nakama-bottom {
   position: fixed;
-  bottom: 12px;
+  bottom: 0px;
   left: 0;
   width: 100%;
   padding: 12px 16px;
