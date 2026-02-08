@@ -73,6 +73,7 @@ button {
     width: 100%;
     padding: 15px;
     margin-top: 14px;
+    margin-bottom: 13px;
     border: none;
     border-radius: 16px;
     font-size: 1rem;
@@ -257,6 +258,7 @@ button:active {
 .bottom-btn {
     flex: 1;
     margin: 0 5px;
+    margin-bottom: 13px;
     padding: 12px 0;
     background: #e6f2ea;
     border: none;
@@ -658,7 +660,7 @@ header {
   bottom: 0px;
   left: 0;
   width: 100%;
-  padding: 12px 16px;
+  padding: 0px 16px;
   background: var(--main-soft, #fff);
   border-top: none;
   box-sizing: border-box;
@@ -670,6 +672,7 @@ header {
   padding: 14px;         /* ★ 少し厚み */
   font-size: 16px;
   border-radius: 16px;  /* ★ 指に優しい */
+  margin-bottom: 13px;
 }
 
 
