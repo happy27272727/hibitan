@@ -132,7 +132,7 @@ button:active {
     border-left: 5px solid var(--accent);
     border-radius: 18px;
     padding: 16px;
-    margin-bottom: 14px;
+    margin-bottom: -23px;
     box-shadow:
         0 10px 20px rgba(0,0,0,0.08),
         0 4px 8px rgba(0,0,0,0.05);
@@ -365,32 +365,21 @@ html, body {
 }
 
 
-/* ===== 右上ユーザーメニュー ===== */
-#userMenuWrapper {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  z-index: 1100;
-}
-
 /* 三点ボタン */
 #userMenuBtn {
   width: 42px;
   height: 42px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, var(--main-soft), var(--accent));
-  color: #fff;
+  border-radius: 12%;
+  background: transparent;   /* ← 透明に */
+  color: var(--main);        /* ← 文字色だけ */
   font-size: 20px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 10px 24px rgba(76,208,76,0.45);
+  box-shadow: none;
 }
 
 /* サブメニュー（左に出る・縦並び） */
 #userSubMenu {
-  position: absolute;
-  top: 0;
-  right: 52px;           /* ← 左に出す */
   flex-direction: column; /* ← 縦並びの正体 */
   min-width: 200px;
 
@@ -746,3 +735,199 @@ header {
 }
 
 
+.comment-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.comment-name {
+  font-weight: bold;
+}
+
+.comment-time {
+  color: #999;
+  font-size: 12px;
+}
+
+.comment-content {
+  margin-top: 4px;
+}
+
+
+.nakama-note,
+.comment-content {
+  white-space: pre-wrap;
+}
+
+
+
+/* 仲間カード内コメントエリア */
+.comments-area {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+
+/* 入力欄は普通に上 */
+.comment-form {
+  margin-bottom: 8px;
+}
+
+/* コメントだけスクロール */
+.comments-list {
+  max-height: 500px;   /* ← 高さ固定が超重要 */
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* 1コメント */
+.comment-item {
+  background: #f7f7f7;
+  padding: 6px 8px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.home-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 18px;
+    box-sizing: border-box;
+
+    background: #fffaf3;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    border-bottom: 1px solid rgba(80, 200, 80, 0.15);
+
+    z-index: 1000;
+}
+
+/* タイトル */
+.home-header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--main);
+    text-shadow: 0 2px 6px rgba(80,200,80,0.2);
+}
+
+#homeGamen {
+    padding-top: 70px;
+}
+
+
+#userMenuBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    color: var(--main);
+    border: none;
+    font-size: 34px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+#userMenuBtn:hover {
+    background: rgba(80,200,80,0.18);
+}
+
+#userMenuBtn:active {
+    transform: scale(0.92);
+}
+
+#userSubMenu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+
+    display: none;
+    flex-direction: column;
+
+    min-width: 200px;
+
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 8px;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.15),
+        0 6px 14px rgba(0,0,0,0.08);
+}
+
+#userSubMenu.open {
+    display: flex;
+}
+
+#userSubMenu button {
+    background: none;
+    border: none;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#userSubMenu button:hover {
+    background: var(--main-soft);
+}
+
+#homeGamen {
+    padding-top: 80px;
+}
+
+
+
+#userSubMenu {
+    position: absolute;
+    top: calc(100% + 8px);  /* ← ボタンの真下に */
+    right: 0;               /* ← ボタン右端に揃える */
+
+    display: none;
+    flex-direction: column;
+
+    min-width: 200px;
+
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 8px;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.15),
+        0 6px 14px rgba(0,0,0,0.08);
+}
+
+#userSubMenu.open {
+    display: flex;
+}
+
+#userMenuWrapper {
+    position: relative;   /* ← これ必須 */
+}
+
+
+#userMenuBtn {
+    width: auto;        /* 100%を解除 */
+    margin-top: 0;      /* 14px解除 */
+    padding: 0px 0px;  /* 適度に */
+}
