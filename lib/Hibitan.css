@@ -674,6 +674,14 @@ header {
   margin-bottom: 20px;
 }
 
+#hibitanBackButton {
+  width: 100%;
+  padding: 14px;         /* ★ 少し厚み */
+  font-size: 16px;
+  border-radius: 16px;  /* ★ 指に優しい */
+  margin-bottom: 20px;
+}
+
 
 #nakamaList {
   padding-bottom: 110px; /* 下固定ボタン分の余白 */

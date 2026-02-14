@@ -13,8 +13,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--<script type="module" src="lib/Hibitan.js"></script>-->
-        <script type="module" src="lib/Hibitan.js?v=6"></script>
-        <link href="lib/Hibitan.css?v-7" rel="stylesheet" media="all">
+        <script type="module" src="lib/Hibitan.js?v=7"></script>
+        <link href="lib/Hibitan.css?v-8" rel="stylesheet" media="all">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -94,19 +94,20 @@
         <!--ホーム画面-->
         <div id="homeGamen" class="screen">
 
-    <div class="home-header">
-        <h1>ヒビタン</h1>
+            <div class="home-header">
+                <h1>ヒビタン</h1>
 
-        <div id="userMenuWrapper">
-            <button id="userMenuBtn" aria-label="menu">⋯</button>
+                <div id="userMenuWrapper">
+                    <button id="userMenuBtn" aria-label="menu">⋯</button>
 
-            <div id="userSubMenu" class="hidden">
-                <button id="logoutBtn">🚪 ログアウト</button>
-                <button id="seityouBtn">🐣 ヒビタン成長記録</button>
-                <button id="customizeBtn">🎨 カスタマイズ</button>
+                    <div id="userSubMenu" class="hidden">
+                        <button id="logoutBtn">🚪 ログアウト</button>
+                        <button id="seityouBtn">🐣 ヒビタン成長記録</button>
+                        <button id="customizeBtn">🎨 カスタマイズ</button>
+                        <button id="pushSettingsBtn">🔔 通知設定</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
 
             <p id="date"></p>
@@ -258,7 +259,7 @@
                 <!-- JSで挿入 -->
             </div>
             <div class="nakama-bottom">
-            <button data-action="back" class="back-btn">戻る</button>
+                <button data-action="back" id="hibitanBackButtn">戻る</button>
             </div>
         </div>
 
@@ -279,6 +280,15 @@
 
             <button data-action="back">戻る</button>
         </div>
+
+        <div id="pushSettingsScreen" class="screen">
+            <h1>通知設定</h1>
+            <button id="enablePushBtn">🔔 通知をON</button>
+            <button id="disablePushBtn">🔕 通知をOFF</button>
+            <button data-action="back">戻る</button>
+        </div>
+
+
 
 
         <script>

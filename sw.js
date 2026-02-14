@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hibitan-cache-v19'; // キャッシュ名を更新するごとに変える
+const CACHE_NAME = 'hibitan-cache-v20'; // キャッシュ名を更新するごとに変える
 const FILES_TO_CACHE = [
   '/',
   '/index.html',
@@ -39,4 +39,17 @@ self.addEventListener('fetch', event => {
       return cached || fetch(event.request);
     })
   );
+});
+
+
+self.addEventListener('push', function (event) {
+    const data = event.data.json();
+
+    event.waitUntil(
+            self.registration.showNotification(data.title, {
+                body: data.body,
+                icon: 'icon-192.png',
+                badge: 'icon-192.png'
+            })
+            );
 });
