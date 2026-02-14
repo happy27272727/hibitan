@@ -1,11 +1,11 @@
 const CACHE_NAME = 'hibitan-cache-v20'; // キャッシュ名を更新するごとに変える
 const FILES_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/lib/Hibitan.js',
-  '/lib/Hibitan.css',
-  '/manifest.json',
-  '/icon-192.png'
+  '/hibitan/',
+  '/hibitan/index.html',
+  '/hibitan/lib/Hibitan.js',
+  '/hibitan/lib/Hibitan.css',
+  '/hibitan/manifest.json',
+  '/hibitan/icon-192.png'
 ];
 
 // インストール時にキャッシュを作る
