@@ -13,8 +13,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--<script type="module" src="lib/Hibitan.js"></script>-->
-        <script type="module" src="lib/Hibitan.js?v=7"></script>
-        <link href="lib/Hibitan.css?v-8" rel="stylesheet" media="all">
+        <script type="module" src="lib/Hibitan.js?v=9"></script>
+        <link href="lib/Hibitan.css?v=9" rel="stylesheet" media="all">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -138,6 +138,12 @@
             <div class="form-group">
                 <label for="dailyNoteInput">一言日記</label>
                 <textarea maxlength="300" id="dailyNoteInput" rows="4" placeholder="任意"></textarea>
+                <input type="file" id="photoInput" accept="image/*" style="display:none">
+                <button type="button" id="addPhotoBtn">📷 写真追加</button>
+                <div id="photoPreview" style="display:none">
+                    <img id="previewImg" alt="プレビュー">
+                    <button type="button" id="removePhotoBtn">✕ 写真を削除</button>
+                </div>
                 <button id="tasseiButton">記録</button>
             </div>
 

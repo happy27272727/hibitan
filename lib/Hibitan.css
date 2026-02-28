@@ -940,3 +940,59 @@ header {
     width: auto;        /* 100%を解除 */
     padding: 0px 0px;  /* 適度に */
 }
+
+
+/* ===== 写真追加エリア ===== */
+#addPhotoBtn {
+    background: linear-gradient(180deg, #ffffff, #f0f0f0);
+    color: #555;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}
+
+#photoPreview {
+    margin-top: 10px;
+    position: relative;
+}
+
+#previewImg {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+#removePhotoBtn {
+    width: auto;
+    padding: 6px 16px;
+    margin-top: 8px;
+    font-size: 13px;
+    background: var(--danger);
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+
+/* ===== 仲間カード：写真トグル ===== */
+.photo-toggle-btn {
+    width: auto;
+    display: inline-block;
+    padding: 6px 16px;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    background: linear-gradient(180deg, var(--main-soft), var(--main));
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(80,200,80,0.3);
+}
+
+.nakama-photo {
+    margin-top: 10px;
+}
+
+.nakama-photo img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
