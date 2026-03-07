@@ -13,16 +13,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--<script type="module" src="lib/Hibitan.js"></script>-->
-        <script type="module" src="lib/Hibitan.js?v=13"></script>
-        <link href="lib/Hibitan.css?v=13" rel="stylesheet" media="all">
+        <script type="module" src="lib/Hibitan.js?v=14"></script>
+        <link href="lib/Hibitan.css?v=14" rel="stylesheet" media="all">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     </head>
 
     <body>
+        <!-- スプラッシュ画面 -->
+        <div id="splashScreen">
+            <p class="splash-copy">日々淡々と、日常ログ</p>
+            <h1 class="splash-title">ヒビタン</h1>
+        </div>
+
         <!--ログイン画面-->
-        <div id="syokiGamen" class="screen active">
+        <div id="syokiGamen" class="screen">
             <h1>ヒビタン</h1>
             <button id="startTutorialBtn">新規登録</button>
             <label for="loginName">ニックネーム</label>
