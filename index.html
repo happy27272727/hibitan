@@ -13,8 +13,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--<script type="module" src="lib/Hibitan.js"></script>-->
-        <script type="module" src="lib/Hibitan.js?v=14"></script>
-        <link href="lib/Hibitan.css?v=14" rel="stylesheet" media="all">
+        <script type="module" src="lib/Hibitan.js?v=15"></script>
+        <link href="lib/Hibitan.css?v=15" rel="stylesheet" media="all">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -36,12 +36,6 @@
             <label for="loginPassword">パスワード</label>
             <input type="password" id="loginPassword" maxlength="6" placeholder="例：123456">
             <button id="roguinButton" type="button">ログイン</button>
-            <!-- キャラクター用 -->
-            <p>ドラッグ&ドロップで狙撃！</p>
-            <p>可哀そうになったらタップして餌を置こう🍚</p>
-            <div id="gameArea">
-                <div id="character">🐱</div>
-            </div>
         </div>
 
         <div id="step1" class="screen">
@@ -111,6 +105,7 @@
                         <button id="seityouBtn">🐣 ヒビタン成長記録</button>
                         <button id="customizeBtn">🎨 カスタマイズ</button>
                         <button id="pushSettingsBtn">🔔 通知設定</button>
+                        <button id="monstoBtn">🐱 モンスト</button>
                     </div>
                 </div>
             </div>
@@ -302,6 +297,17 @@
 
 
 
+
+        <!-- モンスト画面 -->
+        <div id="monstoScreen" class="screen">
+            <h1>🐱 モンスト</h1>
+            <p>ドラッグ&ドロップで狙撃！</p>
+            <p>可哀そうになったらタップして餌を置こう🍚</p>
+            <div id="gameArea">
+                <div id="character">🐱</div>
+            </div>
+            <button data-action="back" style="margin-top:16px;">戻る</button>
+        </div>
 
         <script>
             if ('serviceWorker' in navigator) {
