@@ -1047,3 +1047,134 @@ header {
     border-radius: 12px;
     display: block;
 }
+
+/* ===== 予定記録画面 ===== */
+#scheduleInputScreen canvas {
+    display: block;
+    margin: 0 auto 8px;
+}
+
+.schedule-block-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.schedule-block-row input[type="text"] {
+    width: 80px;
+    flex-shrink: 0;
+    padding: 6px 8px;
+    font-size: 0.9em;
+}
+
+.schedule-block-row select {
+    flex: 1;
+    min-width: 0;
+    padding: 6px 4px;
+    font-size: 0.9em;
+    border-radius: 10px;
+    border: 1.5px solid #ccc;
+    background: white;
+}
+
+.schedule-wave {
+    flex-shrink: 0;
+    color: #888;
+}
+
+.schedule-block-row.schedule-row-error {
+    background: rgba(255, 100, 80, 0.08);
+    border-radius: 10px;
+    outline: 1.5px solid #ff6450;
+}
+
+.schedule-block-row.schedule-row-error select,
+.schedule-block-row.schedule-row-error input[type="text"] {
+    border-color: #ff6450;
+}
+
+.remove-block-btn {
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    padding: 0;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addBlockBtn {
+    width: 100%;
+    margin-bottom: 12px;
+    background: white;
+    color: var(--main);
+    border: 2px dashed var(--main);
+    box-shadow: none;
+}
+
+/* ===== 凡例 ===== */
+.schedule-legend {
+    margin: 6px 0 16px;
+}
+
+.schedule-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    font-size: 0.82em;
+    color: #444;
+}
+
+.schedule-legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+/* ===== 仲間カード内のスケジュール ===== */
+.nakama-action-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.schedule-small-btn {
+    display: inline-block;
+    font-size: 1.1rem;
+    color: #4cb34c;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 6px;
+    padding: 2px 6px;
+    border-radius: 8px;
+    background: rgba(76, 179, 76, 0.1);
+    transition: color 0.2s, transform 0.15s, background 0.2s;
+    user-select: none;
+}
+
+.schedule-small-btn:hover {
+    color: #2c9232;
+    background: rgba(76, 179, 76, 0.2);
+    transform: scale(1.08);
+}
+
+.nakama-schedule {
+    display: none;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.nakama-schedule-canvas {
+    display: block;
+    margin: 0 auto 6px;
+}

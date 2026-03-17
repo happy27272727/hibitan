@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hibitan-cache-v23'; // キャッシュ名を更新するごとに変える
+const CACHE_NAME = 'hibitan-cache-v25'; // キャッシュ名を更新するごとに変える
 const FILES_TO_CACHE = [
   '/hibitan/',
   '/hibitan/index.html',
@@ -34,10 +34,25 @@ self.addEventListener('activate', event => {
 
 // リクエスト時の処理
 self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+
+  // JS・CSS はネットワーク優先（オフライン時のみキャッシュ）
+  if (url.pathname.endsWith('.js') || url.pathname.endsWith('.css')) {
+    event.respondWith(
+      fetch(event.request)
+        .then(res => {
+          const clone = res.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+          return res;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // その他はキャッシュ優先
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      return cached || fetch(event.request);
-    })
+    caches.match(event.request).then(cached => cached || fetch(event.request))
   );
 });
 
