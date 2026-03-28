@@ -177,8 +177,8 @@
             <div class="form-group">
                 <label for="dailyNoteInput">一言日記</label>
                 <textarea maxlength="300" id="dailyNoteInput" rows="4" placeholder="任意"></textarea>
-                <input type="file" id="photoInput" accept="image/*" style="position:fixed;top:-9999px;left:-9999px;width:1px;height:1px;">
-                <label for="photoInput" id="addPhotoBtn">📷 写真追加</label>
+                <input type="file" id="photoInput" accept="image/*" style="position:fixed;top:50%;left:50%;width:1px;height:1px;opacity:0;transform:translate(-50%,-50%);pointer-events:none;">
+                <button type="button" id="addPhotoBtn">📷 写真追加</button>
                 <div id="photoPreview" style="display:none">
                     <img id="previewImg" alt="プレビュー">
                     <button type="button" id="removePhotoBtn">✕ 写真を削除</button>
