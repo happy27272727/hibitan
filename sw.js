@@ -13,8 +13,10 @@ self.addEventListener('install', event => {
   console.log('Service Worker installed');
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(FILES_TO_CACHE))
-      .then(() => self.skipWaiting()) // すぐ有効化
+      .then(cache => cache.addAll(FILES_TO_CACHE).catch(err => {
+        console.warn('SW: キャッシュ失敗（無視して続行）', err);
+      }))
+      .then(() => self.skipWaiting())
   );
 });
 
