@@ -1178,3 +1178,153 @@ header {
     display: block;
     margin: 0 auto 6px;
 }
+
+/* =============================================
+   カードステージ
+   ============================================= */
+.nakama-stage-badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: var(--main-soft);
+    color: var(--main);
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Stage 1: アシスタント - ボーダー + 背景グラデ + ソフトグロー */
+@keyframes stage1Glow {
+    0%, 100% { box-shadow: 0 2px 8px rgba(80,200,80,0.25); }
+    50%       { box-shadow: 0 2px 16px rgba(80,200,80,0.5); }
+}
+.nakama-card--stage-1 {
+    border: 2px solid var(--main);
+    background: linear-gradient(150deg, var(--main-soft) 0%, #fff 55%, var(--main-soft) 100%);
+    animation: stage1Glow 2.5s ease-in-out infinite;
+}
+.nakama-card--stage-1 .nakama-stage-badge {
+    background: var(--main-soft);
+    color: var(--main);
+    font-weight: bold;
+}
+
+/* Stage 2: 社員 - アクセントカラーボーダー + 落ち着いたグロー */
+@keyframes stage2Glow {
+    0%, 100% { box-shadow: 0 2px 10px rgba(100,180,255,0.3); }
+    50%       { box-shadow: 0 2px 20px rgba(100,180,255,0.55); }
+}
+.nakama-card--stage-2 {
+    border: 2px solid var(--accent);
+    background: linear-gradient(150deg, #eef6ff 0%, #fff 55%, #eef6ff 100%);
+    animation: stage2Glow 2.5s ease-in-out infinite;
+}
+.nakama-card--stage-2 .nakama-stage-badge {
+    background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+/* Stage 3: チームリーダー - 鮮やかな虹パステル背景 + 輝くグラデボーダー */
+@keyframes rotateBorder {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes stage3Glow {
+    0%, 100% { box-shadow: 0 0 14px rgba(167,139,250,0.5); }
+    50%       { box-shadow: 0 0 28px rgba(167,139,250,0.85); }
+}
+.nakama-card--stage-3 {
+    border: 3px solid transparent;
+    background:
+        linear-gradient(135deg, #fdf4ff, #ede9fe, #dbeafe, #d1fae5) padding-box,
+        linear-gradient(135deg, #f472b6, #a78bfa, #60a5fa, #34d399, #f472b6) border-box;
+    background-size: 300% 300%;
+    animation: rotateBorder 3s ease infinite, stage3Glow 1.8s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+.nakama-card--stage-3::before {
+    content: '✦';
+    position: absolute;
+    top: 8px; right: 12px;
+    color: #a78bfa;
+    font-size: 13px;
+    animation: starTwinkle 2s ease-in-out infinite;
+    pointer-events: none;
+}
+.nakama-card--stage-3 .nakama-stage-badge {
+    background: linear-gradient(135deg, #f9a8d4, #c4b5fd, #93c5fd);
+    color: #4c1d95;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    box-shadow: 0 1px 4px rgba(167,139,250,0.4);
+}
+
+/* Stage 4: 課長 - ゴールド背景 + 星がきらめく */
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50%       { opacity: 1; transform: scale(1.2); }
+}
+@keyframes stage4Pulse {
+    0%, 100% { box-shadow: 0 0 14px rgba(255,200,0,0.5); }
+    50%       { box-shadow: 0 0 32px rgba(255,200,0,0.85); }
+}
+.nakama-card--stage-4 {
+    border: 2px solid gold;
+    background: linear-gradient(150deg, #fff9e6, #fffdf5, #fff4c2, #fffdf5);
+    animation: stage4Pulse 2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+.nakama-card--stage-4::before,
+.nakama-card--stage-4::after {
+    content: '✦';
+    position: absolute;
+    color: gold;
+    font-size: 14px;
+    animation: starTwinkle 1.8s ease-in-out infinite;
+    pointer-events: none;
+}
+.nakama-card--stage-4::before { top: 8px; right: 12px; animation-delay: 0s; }
+.nakama-card--stage-4::after  { bottom: 10px; left: 10px; font-size: 10px; animation-delay: 0.9s; }
+.nakama-card--stage-4 .nakama-stage-badge {
+    background: linear-gradient(135deg, #fde68a, #fbbf24);
+    color: #78350f;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    box-shadow: 0 1px 4px rgba(200,150,0,0.4);
+}
+
+/* Stage 5〜6: 虹ボーダー + 発光 */
+@keyframes rainbowBorder {
+    0%   { border-color: #f66; }
+    25%  { border-color: #fc0; }
+    50%  { border-color: #0c6; }
+    75%  { border-color: #06f; }
+    100% { border-color: #f66; }
+}
+@keyframes cardGlowPulse {
+    0%, 100% { box-shadow: 0 0 12px rgba(255, 200, 0, 0.4); }
+    50%       { box-shadow: 0 0 28px rgba(255, 200, 0, 0.8); }
+}
+@keyframes cardGlowPulse2 {
+    0%, 100% { box-shadow: 0 0 18px rgba(255, 200, 0, 0.6); }
+    50%       { box-shadow: 0 0 42px rgba(255, 200, 0, 1.0); }
+}
+
+.nakama-card--stage-5 {
+    border: 3px solid;
+    animation: rainbowBorder 2s linear infinite, cardGlowPulse 1.5s ease-in-out infinite;
+}
+.nakama-card--stage-6 {
+    border: 3px solid;
+    animation: rainbowBorder 1.5s linear infinite, cardGlowPulse2 1.2s ease-in-out infinite;
+}
+.nakama-card--stage-5 .nakama-stage-badge,
+.nakama-card--stage-6 .nakama-stage-badge {
+    background: linear-gradient(135deg, #fff8dc, #ffd700);
+    color: #8b6914;
+    font-weight: bold;
+}
