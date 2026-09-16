@@ -177,6 +177,37 @@ button:active {
         0 4px 8px rgba(0,0,0,0.06);
 }
 
+/* ===== 目標チェックリスト ===== */
+.goal-row {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.goal-row label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.goal-checkbox {
+    width: auto;
+    flex: 0 0 auto;
+}
+
+.goal-count {
+    flex: 0 0 auto;
+    margin-left: 12px;
+    font-weight: 700;
+    color: var(--main);
+    background: rgba(80,200,80,0.14);
+    padding: 6px 12px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
 /* ===== 仲間カード ===== */
 .nakama-card {
     background: linear-gradient(180deg, #f7fff7, #e9f7ef);
